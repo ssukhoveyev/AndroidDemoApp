@@ -36,9 +36,14 @@ public class NavigationActivity extends AppCompatActivity {
         LocationListener locationListener = new MyLocationListener();
 
         //Проверяем есть ли у приложения разрешение на получение координат
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED)
         {
-            Toast.makeText(this, "Нет разрешения на использование текущего положения.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,
+                    "Нет разрешения на использование текущего положения.",
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
